@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package proto;
+
+service Nogizaka {
+  rpc ListMember(RequestType) returns (stream Member) {};
+  rpc AddMember(Member) returns (ResponseType) {}
+
+}
+
+message ResponseType {
+}
+
+message RequestType {
+}
+
+message Member {
+  int64  Id   = 1;
+  string Name = 2;
+  string Birthday = 3;
+  int32  Generation  = 4;
+}
